@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class ShopItemFunc extends Component {
   render() {
     return (
@@ -19,6 +19,17 @@ class ShopItemFunc extends Component {
       </div>
     );
   }
+};
+
+ShopItemFunc.propTypes = {
+  item: PropTypes.object.shape({
+    brand: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    descriptionFull:PropTypes.string, 
+    price: PropTypes.number.isRequired,
+    currency: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default ShopItemFunc;
